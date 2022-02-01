@@ -8,9 +8,9 @@ public class Driver {
     private static ArrayList<Dog> dogList = new ArrayList<Dog>();
     // Instance variables (if needed)
     private static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
-    
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        String menuChoice = "";
 
         initializeDogList();
         initializeMonkeyList();
