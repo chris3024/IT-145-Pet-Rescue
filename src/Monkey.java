@@ -1,12 +1,12 @@
 public class Monkey extends RescueAnimal {
 
     private String species;
-    private double tailLength;
-    private double height;
-    private double bodyLength;
+    private String tailLength;
+    private String height;
+    private String bodyLength;
 
 
-    public Monkey(String name, String species, double tailLength, double height, double bodyLength, String gender,
+    public Monkey(String name, String species, String tailLength, String height, String bodyLength, String gender,
                   String age, String weight, String acquisitionDate,
                   String acquisitionCountry, String trainingStatus, boolean reserved, String inServiceCountry) {
 
@@ -34,27 +34,27 @@ public class Monkey extends RescueAnimal {
         this.species = species;
     }
 
-    public double getTailLength() {
+    public String getTailLength() {
         return tailLength;
     }
 
-    public void setTailLength(double tailLength) {
+    public void setTailLength(String tailLength) {
         this.tailLength = tailLength;
     }
 
-    public double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public double getBodyLength() {
+    public String getBodyLength() {
         return bodyLength;
     }
 
-    public void setBodyLength(double bodyLength) {
+    public void setBodyLength(String bodyLength) {
         this.bodyLength = bodyLength;
     }
 }

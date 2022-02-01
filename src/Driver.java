@@ -32,6 +32,16 @@ public class Driver {
                 case "2":
                     intakeNewMonkey(scanner);
                     break;
+                case "3":
+                    reserveAnimal(scanner);
+                    break;
+                case "4":
+                    printAnimals();
+                case "5":
+                    printAnimals();
+                case "6":
+                    printAnimals();
+                    break;
             }
         }
     }
@@ -54,9 +64,15 @@ public class Driver {
 
     // Adds dogs to a list for testing
     public static void initializeDogList() {
-        Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6", "05-12-2019", "United States", "intake", false, "United States");
-        Dog dog2 = new Dog("Rex", "Great Dane", "male", "3", "35.2", "02-03-2020", "United States", "Phase I", false, "United States");
-        Dog dog3 = new Dog("Bella", "Chihuahua", "female", "4", "25.6", "12-12-2019", "Canada", "in service", true, "Canada");
+        Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6",
+                "05-12-2019", "United States", "intake", false,
+                "United States");
+        Dog dog2 = new Dog("Rex", "Great Dane", "male", "3", "35.2",
+                "02-03-2020", "United States", "Phase I", false,
+                "United States");
+        Dog dog3 = new Dog("Bella", "Chihuahua", "female", "4", "25.6",
+                "12-12-2019", "Canada", "in service", true,
+                "Canada");
 
         dogList.add(dog1);
         dogList.add(dog2);
@@ -67,7 +83,11 @@ public class Driver {
     // Adds monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
+        Monkey monkey1 = new Monkey("Sam", "Capuchin", "2.0", "5.1", "7.1",
+                "male", "3", "8", "02-03-2021", "United States",
+                "intake", false, "United State");
 
+        monkeyList.add(monkey1);
     }
 
 
@@ -93,7 +113,58 @@ public class Driver {
         // For the project submission you must also  validate the input
 	// to make sure the monkey doesn't already exist and the species type is allowed
         public static void intakeNewMonkey(Scanner scanner) {
-            System.out.println("The method intakeNewMonkey needs to be implemented");
+            System.out.print("What is the new monkey's name?\n");
+            String name = scanner.nextLine();
+
+            for(Monkey monkey: monkeyList) {
+                if (monkey.getName().equalsIgnoreCase(name)) {
+                    System.out.println("\n\nThis monkey is already in our system.");
+                    return;
+                }
+            }
+
+            System.out.println("What is the monkey's species?");
+            String species = scanner.nextLine();
+
+            //TODO: Validation check for species
+
+            System.out.println("What is the monkey's tail length?");
+            String tailLength = scanner.nextLine();
+
+            System.out.println("What is the monkey's height?");
+            String height = scanner.nextLine();
+
+            System.out.println("What is the monkey's body length?");
+            String bodyLength = scanner.nextLine();
+
+            System.out.println("What is the monkey's gender?");
+            String gender = scanner.nextLine();
+
+            System.out.println("What is the monkey's age?");
+            String age = scanner.nextLine();
+
+            System.out.println("What is the monkey's weight?");
+            String weight = scanner.nextLine();
+
+            System.out.println("What is the monkey's acquisition date?");
+            String acquisitionDate = scanner.nextLine();
+
+            System.out.println("What is the monkey's acquisition country?");
+            String acquistionCountry = scanner.nextLine();
+
+            System.out.println("What is the monkey's training status?");
+            String trainingStatus = scanner.nextLine();
+
+            System.out.println("Is this monkey reserved?");
+            boolean reserved = scanner.nextBoolean();
+
+            System.out.println("What is the monkey's service country?");
+            String inServiceCountry = scanner.nextLine();
+
+            Monkey monkey = new Monkey(name, species, tailLength, height, bodyLength, gender, age, weight,acquisitionDate,
+                    acquistionCountry, trainingStatus, reserved, inServiceCountry);
+
+            monkeyList.add(monkey);
         }
 
         // Complete reserveAnimal
@@ -118,6 +189,8 @@ public class Driver {
         public static void printAnimals() {
             System.out.println("The method printAnimals needs to be implemented");
 
+
         }
+
 }
 
