@@ -42,6 +42,9 @@ public class Driver {
                 case "6":
                     printAnimals();
                     break;
+                case "q":
+                    System.out.println("You have exited the application");
+                    break;
             }
         }
     }
