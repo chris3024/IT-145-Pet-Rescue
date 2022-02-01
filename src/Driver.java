@@ -36,11 +36,13 @@ public class Driver {
                     reserveAnimal(scanner);
                     break;
                 case "4":
-                    printAnimals();
+                    printAnimals("dogs");
+                    break;
                 case "5":
-                    printAnimals();
+                    printAnimals("monkeys");
+                    break;
                 case "6":
-                    printAnimals();
+                    printAnimals("available");
                     break;
                 case "q":
                     System.out.println("You have exited the application");
@@ -65,7 +67,7 @@ public class Driver {
     }
 
 
-    // Adds dogs to a list for testing
+    // Add dogs to a list for testing
     public static void initializeDogList() {
         Dog dog1 = new Dog("Spot", "German Shepherd", "male", "1", "25.6",
                 "05-12-2019", "United States", "intake", false,
@@ -74,7 +76,7 @@ public class Driver {
                 "02-03-2020", "United States", "Phase I", false,
                 "United States");
         Dog dog3 = new Dog("Bella", "Chihuahua", "female", "4", "25.6",
-                "12-12-2019", "Canada", "in service", true,
+                "12-12-2019", "Canada", "in service", false,
                 "Canada");
 
         dogList.add(dog1);
@@ -83,7 +85,7 @@ public class Driver {
     }
 
 
-    // Adds monkeys to a list for testing
+    // Add monkeys to a list for testing
     //Optional for testing
     public static void initializeMonkeyList() {
         Monkey monkey1 = new Monkey("Sam", "Capuchin", "2.0", "5.1", "7.1",
@@ -129,7 +131,7 @@ public class Driver {
             System.out.println("What is the monkey's species?");
             String species = scanner.nextLine();
 
-            //TODO: Validation check for species
+            // for (Monkey monkey: Monkey)
 
             System.out.println("What is the monkey's tail length?");
             String tailLength = scanner.nextLine();
@@ -153,7 +155,7 @@ public class Driver {
             String acquisitionDate = scanner.nextLine();
 
             System.out.println("What is the monkey's acquisition country?");
-            String acquistionCountry = scanner.nextLine();
+            String acquisitionCountry = scanner.nextLine();
 
             System.out.println("What is the monkey's training status?");
             String trainingStatus = scanner.nextLine();
@@ -162,10 +164,10 @@ public class Driver {
             boolean reserved = scanner.nextBoolean();
 
             System.out.println("What is the monkey's service country?");
-            String inServiceCountry = scanner.nextLine();
+            String inServiceCountry = scanner.next();
 
             Monkey monkey = new Monkey(name, species, tailLength, height, bodyLength, gender, age, weight,acquisitionDate,
-                    acquistionCountry, trainingStatus, reserved, inServiceCountry);
+                    acquisitionCountry, trainingStatus, reserved, inServiceCountry);
 
             monkeyList.add(monkey);
         }
@@ -189,11 +191,42 @@ public class Driver {
 	// Remember that you only have to fully implement ONE of these lists. 
 	// The other lists can have a print statement saying "This option needs to be implemented".
 	// To score "exemplary" you must correctly implement the "available" list.
-        public static void printAnimals() {
-            System.out.println("The method printAnimals needs to be implemented");
+        public static void printAnimals(String type) {
+            //System.out.println("The method printAnimals needs to be implemented");
 
+            if (type.equalsIgnoreCase("dogs")) {
+                System.out.println("List of dogs: ");
+                for (Dog dog : dogList) {
+                    System.out.println(dog.getName() + "\t" + dog.getTrainingStatus() + "\t" + dog.getAcquisitionLocation()
+                            + "\t" + dog.getReserved());
+                }
+            }
+            else if (type.equalsIgnoreCase("monkeys")) {
+                System.out.println("List of monkeys: ");
+                for (Monkey monkey: monkeyList) {
+                    System.out.println(monkey.getName() + "\t" + monkey.getTrainingStatus() + "\t" + monkey.getAcquisitionLocation()
+                            + "\t" + monkey.getReserved());
+                }
+            }
+            else if (type.equalsIgnoreCase("available")) {
+                    System.out.println("List of available animals: ");
 
-        }
+                    for (Dog dog: dogList) {
+                        if (dog.getTrainingStatus().equalsIgnoreCase("in service") && !dog.getReserved()) {
+                            System.out.println(dog.getName() + "\t" + dog.getTrainingStatus() + "\t" + dog.getAcquisitionLocation()
+                                    + "\t" + dog.getReserved());
+                        }
+                    }
+                    for (Monkey monkey:monkeyList) {
+                        if (monkey.getTrainingStatus().equalsIgnoreCase("in service") && !monkey.getReserved())
+                        {
+                            System.out.println(monkey.getName() + "\t" + monkey.getTrainingStatus() + "\t" + monkey.getAcquisitionLocation()
+                            + "\t" + monkey.getReserved());
+                        }
+                    }
+                }
+            }
 
 }
+
 
