@@ -22,7 +22,18 @@ public class Driver {
         // Hint: create a Scanner and pass it to the necessary
         // methods 
 	// Hint: Menu options 4, 5, and 6 should all connect to the printAnimals() method.
-
+        while (!menuChoice.equalsIgnoreCase("q")) {
+            displayMenu();
+            menuChoice = scanner.nextLine();
+            switch(menuChoice) {
+                case "1":
+                    intakeNewDog(scanner);
+                    break;
+                case "2":
+                    intakeNewMonkey(scanner);
+                    break;
+            }
+        }
     }
 
     // This method prints the menu options
