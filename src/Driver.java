@@ -6,7 +6,7 @@ public class Driver {
     private static Scanner scanner = new Scanner(System.in);
 
     private static ArrayList<Dog> dogList = new ArrayList<Dog>();
-    // Instance variables (if needed)
+    // create monkey arraylist
     private static ArrayList<Monkey> monkeyList = new ArrayList<Monkey>();
 
     public static void main(String[] args) {
@@ -15,13 +15,7 @@ public class Driver {
         initializeDogList();
         initializeMonkeyList();
 
-        // Add a loop that displays the menu, accepts the users input
-        // and takes the appropriate action.
-	// For the project submission you must also include input validation
-        // and appropriate feedback to the user.
-        // Hint: create a Scanner and pass it to the necessary
-        // methods 
-	// Hint: Menu options 4, 5, and 6 should all connect to the printAnimals() method.
+        //Menu loop system
         while (!menuChoice.equalsIgnoreCase("q")) {
             displayMenu();
             menuChoice = scanner.nextLine();
@@ -36,10 +30,10 @@ public class Driver {
                     reserveAnimal(scanner);
                     break;
                 case "4":
-                    printAnimals("dogs");
+                    printAnimals("dog");
                     break;
                 case "5":
-                    printAnimals("monkeys");
+                    printAnimals("monkey");
                     break;
                 case "6":
                     printAnimals("available");
@@ -110,6 +104,7 @@ public class Driver {
         }
 
         // Add the code to instantiate a new dog and add it to the appropriate list
+        System.out.println("The method intakeNewDog needs to be implemented");
     }
 
 
@@ -131,7 +126,12 @@ public class Driver {
             System.out.println("What is the monkey's species?");
             String species = scanner.nextLine();
 
-            // for (Monkey monkey: Monkey)
+            if (!species.equalsIgnoreCase("capuchin") && !species.equalsIgnoreCase("guenon") &&
+            !species.equalsIgnoreCase("macaque") && !species.equalsIgnoreCase("marmoset") &&
+            !species.equalsIgnoreCase("squirrel monkey") && !species.equalsIgnoreCase("tamarin"))
+            {
+                System.out.println("\n\nThis monkey is not elgible for training\n\n");
+            }
 
             System.out.println("What is the monkey's tail length?");
             String tailLength = scanner.nextLine();
@@ -192,16 +192,16 @@ public class Driver {
 	// The other lists can have a print statement saying "This option needs to be implemented".
 	// To score "exemplary" you must correctly implement the "available" list.
         public static void printAnimals(String type) {
-            //System.out.println("The method printAnimals needs to be implemented");
 
-            if (type.equalsIgnoreCase("dogs")) {
+
+            if (type.equalsIgnoreCase("dog")) {
                 System.out.println("List of dogs: ");
                 for (Dog dog : dogList) {
                     System.out.println(dog.getName() + "\t" + dog.getTrainingStatus() + "\t" + dog.getAcquisitionLocation()
                             + "\t" + dog.getReserved());
                 }
             }
-            else if (type.equalsIgnoreCase("monkeys")) {
+            else if (type.equalsIgnoreCase("monkey")) {
                 System.out.println("List of monkeys: ");
                 for (Monkey monkey: monkeyList) {
                     System.out.println(monkey.getName() + "\t" + monkey.getTrainingStatus() + "\t" + monkey.getAcquisitionLocation()
