@@ -20,13 +20,27 @@ public class Driver {
             displayMenu();
             menuChoice = scanner.nextLine();
             switch (menuChoice) {
-                case "1" -> intakeNewDog(scanner);
-                case "2" -> intakeNewMonkey(scanner);
-                case "3" -> reserveAnimal(scanner);
-                case "4" -> printAnimals("dog");
-                case "5" -> printAnimals("monkey");
-                case "6" -> printAnimals("available");
-                case "q" -> System.out.println("You have exited the application");
+                case "1":
+                    intakeNewDog(scanner);
+                    break;
+                case "2":
+                    intakeNewMonkey(scanner);
+                    break;
+                case "3":
+                    reserveAnimal(scanner);
+                    break;
+                case "4":
+                    printAnimals("dog");
+                    break;
+                case "5":
+                    printAnimals("monkey");
+                    break;
+                case "6":
+                    printAnimals("available");
+                    break;
+                case "q":
+                    System.out.println("You have exited the application");
+                    break;
             }
         }
     }
