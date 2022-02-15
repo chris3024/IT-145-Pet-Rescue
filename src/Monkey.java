@@ -1,11 +1,11 @@
 public class Monkey extends RescueAnimal {
-
+    //
     private String species;
     private String tailLength;
     private String height;
     private String bodyLength;
 
-
+    // monkey constructor
     public Monkey(String name, String species, String tailLength, String height, String bodyLength, String gender,
                   String age, String weight, String acquisitionDate,
                   String acquisitionCountry, String trainingStatus, boolean reserved, String inServiceCountry) {
@@ -26,6 +26,7 @@ public class Monkey extends RescueAnimal {
 
     }
 
+    // Setters and getters for monkey class
     public String getSpecies() {
         return species;
     }
