@@ -19,29 +19,35 @@ public class Driver {
         while (!menuChoice.equalsIgnoreCase("q")) {
             displayMenu();
             menuChoice = scanner.nextLine();
-            switch (menuChoice) {
-                case "1":
-                    intakeNewDog(scanner);
-                    break;
-                case "2":
-                    intakeNewMonkey(scanner);
-                    break;
-                case "3":
-                    reserveAnimal(scanner);
-                    break;
-                case "4":
-                    printAnimals("dog");
-                    break;
-                case "5":
-                    printAnimals("monkey");
-                    break;
-                case "6":
-                    printAnimals("available");
-                    break;
-                case "q":
-                    System.out.println("You have exited the application");
-                    break;
-            }
+
+                switch (menuChoice) {
+                    case "1":
+                        intakeNewDog(scanner);
+                        break;
+                    case "2":
+                        intakeNewMonkey(scanner);
+                        break;
+                    case "3":
+                        reserveAnimal(scanner);
+                        break;
+                    case "4":
+                        printAnimals("dog");
+                        break;
+                    case "5":
+                        printAnimals("monkey");
+                        break;
+                    case "6":
+                        printAnimals("available");
+                        break;
+                    case "q":
+                        System.out.println("You have exited the application");
+                        break;
+                    default:
+                        System.out.println("Enter valid menu option");
+                        break;
+                }
+
+
         }
     }
 
