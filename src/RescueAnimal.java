@@ -1,4 +1,5 @@
-"""This has been implemented as a concrete class by mistake"""
+// FIXME: This has been implemented as a concrete class by mistake
+// FIXME: Line spaceing is inconsistent
 
 import java.lang.String;
 
