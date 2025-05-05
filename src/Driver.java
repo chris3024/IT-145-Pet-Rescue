@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+"""lack of comments throughout makes it hard to follow along with code"""
+	"""no testing present at all in the project"""
 public class Driver {
 
     private static Scanner scanner = new Scanner(System.in);
@@ -110,7 +111,7 @@ public class Driver {
         }
         System.out.println("What is the dog's breed?");
         String breed = scanner.nextLine();
-
+"""NO input validation for non-integer numbers"""
         System.out.println("What is the dog's gender?");
         String gender = scanner.nextLine();
 
