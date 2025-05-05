@@ -1,4 +1,4 @@
-
+"""This has been implemented as a concrete class by mistake"""
 
 import java.lang.String;
 
