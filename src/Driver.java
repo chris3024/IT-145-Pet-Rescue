@@ -219,6 +219,7 @@ public class Driver {
 
         // Complete reserveAnimal
         // You will need to find the animal by animal type and in service country
+	""" This does not iterate through all the animals, it just gets the first animal that matches and flips the reserved status"""
         public static void reserveAnimal(Scanner scanner) {
 
             //getting user input for animal type
