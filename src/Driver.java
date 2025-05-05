@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-"""lack of comments throughout makes it hard to follow along with code"""
-	"""no testing present at all in the project"""
+
+// FIXME: lack of comments throughout makes it hard to follow along with the code
+// FIXME: no testing present at all in the project
 public class Driver {
 
     private static Scanner scanner = new Scanner(System.in);
@@ -111,7 +112,7 @@ public class Driver {
         }
         System.out.println("What is the dog's breed?");
         String breed = scanner.nextLine();
-"""NO input validation for non-integer numbers"""
+// FIXME: No input validation for non-integer numbers
         System.out.println("What is the dog's gender?");
         String gender = scanner.nextLine();
 
@@ -220,7 +221,7 @@ public class Driver {
 
         // Complete reserveAnimal
         // You will need to find the animal by animal type and in service country
-	""" This does not iterate through all the animals, it just gets the first animal that matches and flips the reserved status"""
+	// FIXME: This does not iterate through all the animals, it just gets the first animal that matches and flips the reserved status
         public static void reserveAnimal(Scanner scanner) {
 
             //getting user input for animal type
